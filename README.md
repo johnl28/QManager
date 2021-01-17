@@ -10,6 +10,6 @@
 * ToDo:
 	* Adjust time interval for hidding the icons
 	* Add Hotkeys
-	* Add jsoncpp library
+	* Add jsoncpp library and config file
 
 

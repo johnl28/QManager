@@ -1,8 +1,11 @@
-/*
-Program Name: QManager
-Author: johnl
-Date: 21.12.2020
-*/
+///////////////////////////// Free for use /////////////////////////////////
+//
+//   Project     : QManager
+//   File        : QManager.cpp
+//
+//   Created By: johnl / ionutcriste28@gmail.com
+//
+////////////////////////////////////////////////////////////////////////////
 
 #include "Resource.h"
 #include "framework.h"
