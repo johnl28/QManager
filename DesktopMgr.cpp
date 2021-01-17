@@ -132,19 +132,18 @@ void InitDekstopMgr(HWND &hWnd)
     auto hwndPB = CreateWindowEx(0, PROGRESS_CLASS, L"DekstopMgrPB",
         WS_CHILD | WS_VISIBLE | PBS_SMOOTH,
         10, 30,
-        225, 10,
+        225, 15,
         parent, (HMENU)0, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 
     SendMessage(hwndPB, PBM_SETRANGE, 0, MAKELPARAM(0, wait));
     SendMessage(hwndPB, PBM_SETSTEP, (WPARAM)1, 0);
     wndMap["DekstopMgrPB"] = hwndPB;
 
-
     auto hwndButton = CreateWindow(
         L"BUTTON",
         L"Auto-Hide Desktop Icons",
         WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_AUTOCHECKBOX | BS_FLAT,
-        20, //x
+        23, //x
         15, //y
         150, //w
         26, //h

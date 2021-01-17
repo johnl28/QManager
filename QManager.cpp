@@ -264,21 +264,21 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    wndMap["startup_btn"] = startupButton;
    CheckStartup();
 
-   auto hwndTrack = CreateWindowEx(
-       0,                               // no extended styles 
-       TRACKBAR_CLASS,                  // class name 
-       L"Trackbar Control",              // title (caption) 
-       WS_CHILD |
-       WS_VISIBLE |
-       TBS_AUTOTICKS |
-       TBS_ENABLESELRANGE,              // style 
-       20, 70,                          // position 
-       200, 20,                         // size 
-       hWnd,                         // parent window 
-       (HMENU)ID_TIME_BUTTON,                     // control identifier 
-       (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),                         // instance 
-       NULL                             // no WM_CREATE parameter 
-   );
+   //auto hwndTrack = CreateWindowEx(
+   //    0,                               // no extended styles 
+   //    TRACKBAR_CLASS,                  // class name 
+   //    L"Trackbar Control",              // title (caption) 
+   //    WS_CHILD |
+   //    WS_VISIBLE |
+   //    TBS_AUTOTICKS |
+   //    TBS_ENABLESELRANGE,              // style 
+   //    20, 70,                          // position 
+   //    200, 20,                         // size 
+   //    hWnd,                         // parent window 
+   //    (HMENU)ID_TIME_BUTTON,                     // control identifier 
+   //    (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),                         // instance 
+   //    NULL                             // no WM_CREATE parameter 
+   //);
 
 
    // Initialize config file
