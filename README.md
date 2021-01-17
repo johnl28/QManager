@@ -1,15 +1,15 @@
 # QManager
  
-Multithead Win32 App
+# Multithead Win32 App
 
-Features:
-	Auto-Hide Desktop Icons
-	Startup option
+* Features:
+	* Auto-Hide Desktop Icons
+	* Startup option
 	
 	
-ToDo:
-	Adjust time interval for hidding the icons
-	Add Hotkeys
-	Add jsoncpp library
+* ToDo:
+	* Adjust time interval for hidding the icons
+	* Add Hotkeys
+	* Add jsoncpp library
 
 
