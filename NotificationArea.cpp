@@ -9,16 +9,15 @@ void InitNotification(HINSTANCE &hInstance, HWND &hWnd)
 	nidApp.hWnd		= (HWND)hWnd;
 	nidApp.uID		= 5;
 	nidApp.uFlags	= NIF_ICON | NIF_MESSAGE | NIF_TIP | NIF_INFO | NIM_MODIFY;
-	nidApp.hIcon	= hMainIcon; // handle of the Icon to be displayed, obtained from LoadIcon 
+	nidApp.hIcon	= hMainIcon;
 	nidApp.uCallbackMessage = WM_USER_SHELLICON;
 
-	//wcscpy_s(nidApp.szInfoTitle, _T("This is a title"));
+	//wcscpy_s(nidApp.szInfoTitle, _T("QManager"));
 	//HRESULT hr = StringCchCopy(nidApp.szInfo,
 	//	ARRAYSIZE(nidApp.szInfo),
-	//	TEXT("Your message text goes here."));
+	//	TEXT("QManager is running in background."));
 	//nidApp.uTimeout = 15000; // in milliseconds
 
-	wcscpy_s(nidApp.szTip, _T("Text in tooltip"));
 
 	LoadString(hInstance, 1, nidApp.szTip, MAX_LOADSTRING);
 	Shell_NotifyIcon(NIM_ADD, &nidApp);
@@ -33,8 +32,6 @@ void OpenMenu(HWND &hWnd)
 	GetCursorPos(&lpClickPoint);
 	hPopMenu = CreatePopupMenu();
 	InsertMenu(hPopMenu, 0xFFFFFFFF, MF_BYPOSITION | MF_STRING, IDM_ABOUT, _T("About"));
-	//InsertMenu(hPopMenu, 0xFFFFFFFF, uFlag, IDM_TEST2, _T("Test 2"));
-	//InsertMenu(hPopMenu, 0xFFFFFFFF, uFlag, IDM_TEST1, _T("Test 1"));
 	InsertMenu(hPopMenu, 0xFFFFFFFF, MF_SEPARATOR, IDM_SEP, _T("SEP"));
 	InsertMenu(hPopMenu, 0xFFFFFFFF, MF_BYPOSITION | MF_STRING, IDM_EXIT, _T("Exit"));
 

@@ -218,6 +218,7 @@ void ToggleStartup()
     }
 
     SETC("startup", !isEnabled);
+    Log("Startup toggle function called, status: %d", GetCfg("startup"));
 }
 
 void CheckStartup()
@@ -228,7 +229,7 @@ void CheckStartup()
     LONG result = RegQueryValueExA(subKey, "QManager", NULL, NULL, NULL, NULL);
     if (result == ERROR_SUCCESS)
     {
-        Log("Startup Enabled!");
+        Log("Startup Enabled.");
         Button_SetCheck(GetWindowPtr("startup_btn"), BST_CHECKED);
         SETC("startup", true);
     }
@@ -399,38 +400,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     }
     break;
 
-   //case WM_PAINT:
-   //{
-   //    PAINTSTRUCT ps;
-   //    BeginPaint(hWnd, &ps);
-   //
-   //
-   //    RECT rcButton;
-   //    rcButton.left = 50;
-   //    rcButton.top = 50;
-   //    rcButton.right = rcButton.left + 75;
-   //    rcButton.bottom = rcButton.top + 23;
-   //
-   //    // Set the DC's background color to whatever color we want the button to be.
-   //    // In this case, we use a nice orange. You can use anything you want.
-   //    // Or even fill the background with an image.
-   //    COLORREF clrOriginal = SetBkColor(ps.hdc, RGB(255, 128, 255));
-   //    if (clrOriginal != CLR_INVALID)
-   //    {
-   //        // Fill the button's rectangle with a solid color.
-   //        ExtTextOut(ps.hdc, 30, 30, ETO_OPAQUE, &rcButton, NULL, 0, NULL);
-   //
-   //        // Draw the button's border.
-   //        DrawEdge(ps.hdc, &rcButton, EDGE_RAISED, BF_TOPLEFT | BF_BOTTOMRIGHT);
-   //
-   //        // Restore the DC's original background color.
-   //        SetBkColor(ps.hdc, clrOriginal);
-   //    }
-   //
-   //
-   //    EndPaint(hWnd, &ps);
-   //    break;
-   //}
 
     default:
     {
