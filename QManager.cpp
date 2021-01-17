@@ -89,6 +89,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     int argCount = 0;
     auto args = CommandLineToArgvW(GetCommandLine(), &argCount);
 
+
 #ifdef _DEBUG
     AllocConsole();
     AttachConsole(GetCurrentProcessId());
@@ -107,6 +108,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         Log(args[k]);
     }
 #endif
+
+    auto qManagerWnd = FindWindowExW(GetDesktopWindow(), nullptr, L"QManager", NULL);
+    if (qManagerWnd)
+    {
+        //MessageBox(GetDesktopWindow(), L"There is already an instance opened.", szTitle, MB_ICONWARNING);
+        ShowWindow(qManagerWnd, SW_SHOW);
+        PostQuitMessage(0);
+        return FALSE;
+    }
 
     LoadStringW(hInstance, IDC_QMANAGER, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
@@ -228,6 +238,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // Store instance handle in our global variable
    
+
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_SYSMENU,
       CW_USEDEFAULT, 0, 290, 160, nullptr, nullptr, hInstance, nullptr);
    ::SetMenu(hWnd, NULL);
@@ -262,6 +273,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
        NULL);
    SendMessage(startupButton, WM_SETFONT, (LPARAM)GetStockObject(DEFAULT_GUI_FONT), true);
    wndMap["startup_btn"] = startupButton;
+
    CheckStartup();
 
    //auto hwndTrack = CreateWindowEx(

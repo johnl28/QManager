@@ -1,6 +1,6 @@
 # QManager
  
-# Multithead Win32 App
+# Multi thread Win32 App
 
 * Features:
 	* Auto-Hide Desktop Icons
