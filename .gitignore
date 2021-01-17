@@ -1,0 +1,27 @@
+__test
+__trash
+Doc
+
+*.ncb
+*.opensdf
+*.sdf
+#+easy with .suo
+#*.suo
+.vs
+*.bsc
+*.exe
+*.ilk
+*.map
+*.pdb
+*.o
+
+obj
+ipch
+Debug
+Release
+Distribute
+
+bin
+
+*.bak
+/.project
